@@ -17,13 +17,7 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-    }
-}
-pipeline {
-    agent any
-
-    stages {
-        stage('Build debian') {
+        stage('Build ubuntu') {
             steps {
                 sh 'sudo docker build -t ubuntu-systemd -f tests/Dockerfile-ubuntu .'
             }
@@ -31,11 +25,6 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'sudo ./tests/linux-run.sh ubuntu-systemd test-ubuntu'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
             }
         }
     }
