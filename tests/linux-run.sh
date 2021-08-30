@@ -83,7 +83,7 @@ if [ $? -ne 0 ] ; then
 	cleanup "$name"
 	exit 8
 fi
-sleep 120
+sleep 240
 
 echo "[*] Exec curl"
 res="$(curl -s -H "User-Agent: LegitOne" http://localhost/)"
