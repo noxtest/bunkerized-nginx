@@ -22,7 +22,7 @@ pipeline {
                 sh 'sudo docker build -t ubuntu-systemd -f tests/Dockerfile-ubuntu .'
             }
         }
-        stage('Test') {
+        stage('Test Ubuntu') {
             steps {
                 sh 'sudo ./tests/linux-run.sh ubuntu-systemd test-ubuntu'
             }
