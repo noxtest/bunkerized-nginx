@@ -27,5 +27,25 @@ pipeline {
                 sh 'sudo ./tests/linux-run.sh ubuntu-systemd test-ubuntu'
             }
         }
+        stage('Build fedora') {
+            steps {
+                sh 'sudo docker build -t fedora-systemd -f tests/Dockerfile-fedora .'
+            }
+        }
+        stage('Test fedora') {
+            steps {
+                sh 'sudo ./tests/linux-run.sh fedora-systemd test-fedora'
+            }
+        }
+        stage('Build Centos') {
+            steps {
+                sh 'sudo docker build -t centos-systemd -f tests/Dockerfile-centos .'
+            }
+        }
+        stage('Test Centos') {
+            steps {
+                sh 'sudo ./tests/linux-run.sh centos-systemd test-centos'
+            }
+        }
     }
 }
