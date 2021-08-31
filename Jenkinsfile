@@ -9,9 +9,9 @@ pipeline {
           }
         }
 
-        stage('error') {
+        stage('mail') {
           steps {
-            sh 'sudo docker rm -f 5160aaebf9fa5bbcbce3f18a0201f0794830856c9b998689b5395cea91dbd542'
+            mail(subject: 'test', bcc: 'jenk', from: 'deamon', to: 'jerome.nox@gmail.com', body: 'ok')
           }
         }
 
