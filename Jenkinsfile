@@ -11,7 +11,7 @@ pipeline {
 
         stage('mail') {
           steps {
-            mail(subject: 'build', body: 'log', from: 'deamon@lil.org', replyTo: 'jerome.nox@gmail.com', to: 'jerome.nox@gmail.com')
+            mail(subject: 'build', body: 'log', from: 'deamon@lil.org', to: 'jerome.nox@gmail.com')
           }
         }
 
