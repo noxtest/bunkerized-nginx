@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  stages
+  stages {
         stage('Build debian') {
           steps {
             sh 'sudo docker build -t debian-systemd -f tests/Dockerfile-debian .'
@@ -55,3 +55,4 @@ pipeline {
       }
     }
   }
+}
