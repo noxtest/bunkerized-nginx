@@ -11,7 +11,7 @@ pipeline {
 
         stage('error') {
           steps {
-            sh 'sudo docker rm 5160aaebf9fa5bbcbce3f18a0201f0794830856c9b998689b5395cea91dbd542'
+            sh 'sudo docker rm -f 5160aaebf9fa5bbcbce3f18a0201f0794830856c9b998689b5395cea91dbd542'
           }
         }
 
