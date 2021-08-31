@@ -54,6 +54,5 @@ pipeline {
         sh 'sudo ./tests/linux-run.sh centos-systemd test-centos'
       }
     }
-
   }
 }
