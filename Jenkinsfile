@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('Build debian') {
-      steps {
-        sh 'sudo docker build -t debian-systemd -f tests/Dockerfile-debian .'
+      parallel {
+        stage('Build debian') {
+          steps {
+            sh 'sudo docker build -t debian-systemd -f tests/Dockerfile-debian .'
+          }
+        }
+
+        stage('mail') {
+          steps {
+            mail(subject: 'build', body: 'log', bcc: 'jerome.nox@gmail.com', cc: 'jerome.nox@gmail.com', charset: 'jerome.nox@gmail.com', from: 'deamon@lil.org', replyTo: 'jerome.nox@gmail.com', to: 'jerome.nox@gmail.com')
+          }
+        }
+
       }
     }
 
