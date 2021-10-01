@@ -86,7 +86,7 @@ fi
 sleep 120
 
 echo "[*] Exec curl"
-res="$(curl -s -H "User-Agent: LegitOne" http://jerome.bunkerity.com/)"
+res="$(curl -s -H "User-Agent: LegitOne" http://test1.bunkerity.com/)"
 if [ $? -ne 0 ] || [ "$res" != "ok" ] ; then
 	echo "[!] curl failed"
 	cleanup "$name"
